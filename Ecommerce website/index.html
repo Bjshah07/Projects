@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Royal Enfield - Iconic Motorcycles</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: rgba(0,0,0,0.7);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header h1 {
+            font-weight: 900;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: #e74c3c;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #e74c3c;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        nav a:hover, nav a:focus {
+            color: #e74c3c;
+        }
+        nav a:hover::after, nav a:focus::after {
+            width: 100%;
+        }
+        .hero {
+            background: url('./assets/travel-with-enfield-k8DsZ8bqVGY-unsplash.jpg') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e74c3c;
+            font-size: 3rem;
+            font-weight: 900;
+            animation: fadeInDown 1.5s ease forwards;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 2.5rem;
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.7);
+        }
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #f0f0f0;
+        }
+        .product-info h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            color: #e74c3c;
+        }
+        .product-info p {
+            flex-grow: 1;
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 1.25rem;
+        }
+        .product-price {
+            font-weight: 900;
+            font-size: 1.25rem;
+            color: #e74c3c;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.7);
+        }
+        .feature-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: #ddd;
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8.5px);
+            -webkit-backdrop-filter: blur(8.5px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.7);
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card cite {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+        #about, #contact {
+            margin-top: 4rem;
+            text-align: center;
+            color: #e0e0e0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+        #about h2, #contact h2, #features h2, #testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #e74c3c;
+            text-shadow: none;
+            animation: none;
+        }
+        #about p, #contact p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #ddd;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            animation: fadeInText 3s ease forwards;
+        }
+        #contact a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+            color: #c0392b;
+        }
+        footer {
+            background-color: rgba(0,0,0,0.7);
+            color: #e74c3c;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 5rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(231, 76, 60, 1);
+            }
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .product-card {
+            animation: fadeInUp 1s ease forwards;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero {
+                font-size: 2rem;
+                height: 300px;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+            nav a {
+                margin: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Royal Enfield</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#products">Bikes</a>
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero" id="home">
+        Ride the Legend with Royal Enfield
+    </section>
+    <main>
+        <section id="products">
+            <h2>Featured Bikes</h2>
+            <div class="products">
+                <article class="product-card">
+                    <img class="product-image" src="./assets/travel-with-enfield-k8DsZ8bqVGY-unsplash.jpg" alt="Royal Enfield Classic 350" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Classic 350</h3>
+                        <p>Iconic retro motorcycle with 350cc engine, perfect for city rides and long tours.</p>
+                        <div class="product-price">Rs 1,99,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img1.jpg" alt="Royal Enfield Bullet 500" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Bullet 500</h3>
+                        <p>Legendary 500cc engine with unmatched torque and classic design.</p>
+                        <div class="product-price">Rs 2,49,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img2.jpg" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Himalayan</h3>
+                        <p>Adventure-ready motorcycle with 411cc engine, designed for off-road exploration.</p>
+                        <div class="product-price">Rs 2,19,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img3.jpg" alt="Royal Enfield Continental GT" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Continental GT</h3>
+                        <p>Sporty cafe racer with 535cc engine, delivering thrilling performance.</p>
+                        <div class="product-price">Rs 2,99,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img4.jpg" alt="Royal Enfield Meteor 350" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Meteor 350</h3>
+                        <p>Modern cruiser with 350cc engine, perfect for urban commuting and weekend rides.</p>
+                        <div class="product-price">Rs 2,09,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img5.jpg" alt="Royal Enfield Thunderbird 350" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Thunderbird 350</h3>
+                        <p>Retro cruiser with 350cc engine, offering comfort and style for every journey.</p>
+                        <div class="product-price">Rs 1,79,000</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img class="product-image" src="./assets/img6.jpg" alt="Royal Enfield Interceptor 650" />
+                    <div class="product-info">
+                        <h3>Royal Enfield Interceptor 650</h3>
+                        <p>Modern classic with 648cc twin-cylinder engine, blending heritage with performance.</p>
+                        <div class="product-price">Rs 2,99,000</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="features">
+            <h2>Why Choose Our Bikes?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>High Performance</h3>
+                    <p>Engineered for speed and efficiency, our bikes deliver unmatched performance on any terrain.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Eco-Friendly</h3>
+                    <p>Our electric bikes reduce carbon footprint while providing a smooth and quiet ride.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Durable Design</h3>
+                    <p>Built to last with premium materials and advanced manufacturing techniques.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Customizable</h3>
+                    <p>Personalize your bike with a range of colors and accessories to match your style.</p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>"The best bike I've ever owned! Smooth ride and incredible performance."</p>
+                    <cite>- John Doe</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Eco-friendly and stylish. Highly recommend for city commuting."</p>
+                    <cite>- Jane Smith</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Durable and reliable. Perfect for off-road adventures."</p>
+                    <cite>- Alex Johnson</cite>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Royal Enfield is a legendary motorcycle brand with over 120 years of heritage in engineering excellence and iconic design. Founded in 1901, we've been at the forefront of motorcycle innovation, blending classic aesthetics with modern performance. Our commitment to quality craftsmanship, reliable engineering, and the spirit of adventure has made us a favorite among riders worldwide.</p>
+            <p>From the bustling streets of cities to the rugged terrains of off-road trails, Royal Enfield motorcycles are designed to deliver an unparalleled riding experience. Each bike is built with precision, using the finest materials and cutting-edge technology, ensuring durability and performance that stands the test of time.</p>
+            <p>Our mission is to inspire riders to explore, connect, and create unforgettable memories on two wheels. Whether you're a seasoned rider or just starting your journey, Royal Enfield offers a range of motorcycles that cater to every passion and lifestyle.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="#" method="post" style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto;">
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" name="first_name" placeholder="First Name" required style="flex: 1; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem;">
+                    <input type="text" name="last_name" placeholder="Last Name" required style="flex: 1; padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem;">
+                </div>
+                <input type="email" name="email" placeholder="Email Address" required style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem;">
+                <input type="tel" name="phone" placeholder="Phone Number" style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem;">
+                <select name="subject" required style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem;">
+                    <option value="">Select Subject</option>
+                    <option value="inquiry">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+                <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; background: rgba(255,255,255,0.1); color: #f0f0f0; font-size: 1rem; resize: vertical;"></textarea>
+                <button type="submit" style="padding: 0.75rem 2rem; background: #e74c3c; color: #f0f0f0; border: none; border-radius: 5px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.3s ease;">Send Message</button>
+            </form>
+            <p style="margin-top: 1rem; font-size: 1rem;">Alternatively, reach us at <a href="mailto:support@royalenfield.com">support@royalenfield.com</a> or call (555) 987-6543.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Royal Enfield. All rights reserved.</p>
+    </footer>
+</body>
+</html>

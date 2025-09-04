@@ -1,0 +1,406 @@
+<!--
+  HTML Document Structure
+
+  This is the main HTML document structure for a personal portfolio website.
+  It includes a navigation menu, header, about section, services section, work section, contact section, and footer.
+
+  @author Bijay Kumar Shah
+  @version 1.0
+-->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="shortcut icon" href="/portfolio_images/me1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bijay Kumar shah - Portfolio</title>
+</head>
+
+<body class="text-center overflow-x-hidden dark:bg-darkTheme dark:text-white">
+    <!--
+  Navigation Menu
+
+  This is the navigation menu that appears at the top of the page.
+  It includes links to the different sections of the website.-->
+    <nav
+        class="flex justify-between px-7 py-2 w-full h-auto items-center text-lg fixed lg:px-8 xl:px-[8%] z-50 font-semibold">
+        <img class="w-40 cursor-pointer dark:hidden"
+            src="portfolio_images/bijay-kumar-shah-high-resolution-logo-black-transparent.png">
+        <img class="w-40 cursor-pointer hidden dark:block"
+            src="portfolio_images/bijay-kumar-shah-high-resolution-logo-white-transparent.png">
+        <ul
+            class="hidden md:flex gap-4 lg:gap-7 shadow-sm rounded-full bg-white px-12 py-2 bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent">
+            <li><a class="hover:text-gray-300 dark:hover:text-darkhover active" href="#home">Home</a></li>
+            <li><a class="hover:text-gray-300 dark:hover:text-darkhover" href="#about">About me</a></li>
+            <li><a class="hover:text-gray-300 dark:hover:text-darkhover" href="#service">Services</a></li>
+            <li><a class="hover:text-gray-300 dark:hover:text-darkhover" href="#work">My works</a></li>
+            <li><a class="hover:text-gray-300 dark:hover:text-darkhover" href="#contact">Contact me</a></li>
+        </ul>
+        <div class="flex gap-5">
+            <button>
+                <img class="w-6 dark:hidden hover:w-8" src="portfolio_images/moon_icon.png" onclick="modes()">
+                <img class="w-6 hidden dark:block hover:w-8 animate-spin_speed" src="portfolio_images/sun_icon.png"
+                    onclick="modes()">
+            </button>
+            <a class="lg:flex gap-2 hidden border-gray-400 hover:text-white dark:hover:bg-darkhover rounded-full px-5 border-2 py-2 hover:bg-gray-300"
+                href="#contact">Contact<img class="w-2 h-2 dark:hidden animate-ping"
+                    src="portfolio_images/arrow-icon.png">
+                <img class="w-2 h-2 hidden dark:block animate-bounce" src="portfolio_images/arrow-icon-dark.png">
+            </a>
+            <button class="block md:hidden op">
+                <i class="fa-solid fa-bars w-6"></i>
+            </button>
+        </div>
+
+
+        <!-- hamburger navbar for mobile -->
+        <ul id="sideMenu"
+            class=" flex flex-col md:hidden text-xl font-semibold gap-4 bg-lime-300 w-56 -right-64 top-0 bottom-0 px-10 py-20 z-50 h-screen fixed transition duration-500 dark:bg-[#2a004a]">
+
+            <div class="absolute right-5 top-5 cursor-pointer cl ">
+                <i class="fa-solid fa-xmark hover:text-red-700"></i>
+            </div>
+            <li class="hover:text-gray-300 active" onclick="closeMenu()"><a href="#home">Home</a></li>
+            <li class="hover:text-gray-300" onclick="closeMenu()"><a href="#about">About me</a></li>
+            <li class="hover:text-gray-300" onclick="closeMenu()"><a href="#service">Services</a></li>
+            <li class="hover:text-gray-300" onclick="closeMenu()"><a href="#work">My works</a></li>
+            <li class="hover:text-gray-300" onclick="closeMenu()"><a href="#contact">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="home">
+        <div class="h-screen w-11/12 mb-10 flex flex-col justify-center items-center mx-auto max-w-3xl gap-4 ">
+            <img src="portfolio_images/me1.png" class="w-40 rounded-full imgs">
+            <h1 class="text-4xl font-bold head1"><span
+                    class="auto-type text-darkhover dark:text-slate-400">Welcome</span> to
+                My Digital Space!</h1>
+            <p class="text-xl font-semibold head2">Hi, I'm <strong>Bijay Kumar Shah</strong>, a B.Tech graduate with a
+                knack
+                for creating dynamic web applications. Explore my portfolio to view my projects and technical
+                capabilities.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mt-7 cont">
+                <a href="#contact"
+                    class="px-4 py-3 border font-semibold border-gray-700 flex items-center rounded-3xl text-lg text-white bg-gradient-to-r from-black to-slate-800 hover:from-slate-800 hover:to-black gap-4">Contact
+                    me<i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="portfolio_images/Main resume.pdf" download
+                    class="px-4 py-3 font-semibold border dark:hover:bg-darkhover hover:bg-gray-400 hover:text-white border-gray-700 flex items-center rounded-3xl text-lg gap-4">My
+                    Resume<i class="fa-solid fa-circle-down w-6 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-400"></div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <div class="px-[12%] py-14 scroll-mt-20">
+            <h1 class="text-xl">Introduction</h1>
+            <h1 class="text-4xl">About Me</h1>
+            <div class="flex flex-col items-center w-full lg:flex-row my-10 gap-16">
+                <div class="max-w-max mx-auto relative">
+                    <img src="portfolio_images/me.png" class="h-96 sm:w-76 rounded-3xl max-w-none">
+
+                    <div
+                        class="w-2/5 aspect-square rounded-full bg-white dark:bg-[#11001f] absolute right-0  bottom-0 shadow-[0px_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center translate-x-1/4 translate-y-1/3">
+                        <img src="portfolio_images/circular-text.png" class="w-full animate-spin_speed">
+                        <img src="portfolio_images/dev-icon.png"
+                            class="w-1/4 absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    </div>
+                </div>
+                <div>
+                    <p class="flex-1 text-lg from-neutral-500">Greetings! I'm Bijay Kumar Shah, a B.Tech graduate with a
+                        passion for coding and innovation. My portfolio showcases the projects and skills that define my
+                        journey as a web developer. From sleek, responsive designs to robust functionality, I strive to
+                        push
+                        the boundaries of what's possible. Explore my work and get in touch if you're looking for a
+                        driven
+                        and talented developer to join your team.
+                    </p>
+
+                    <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 mt-4">
+                        <li
+                            class="border-[0.5px] cursor-pointer border-gray-700 rounded-2xl p-4 text-left hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                            <img src="portfolio_images/code-icon.png" class="w-5 dark:hidden">
+                            <img src="portfolio_images/code-icon-dark.png" class="w-5 hidden dark:block">
+                            <h1 class="text-xl font-bold">Languages:</h1>
+                            <p class="text-lg text-gray-500 font-medium">HTML, CSS, JavaScript, C, C++</p>
+                        </li>
+                        <li
+                            class="border-[0.5px] cursor-pointer border-gray-700 rounded-2xl p-4 text-left hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover ">
+                            <img src="portfolio_images/edu-icon.png" class="w-5 dark:hidden">
+                            <img src="portfolio_images/edu-icon-dark.png" class="w-5 hidden dark:block">
+                            <h1 class="text-xl font-bold">Education:</h1>
+                            <p class="text-lg text-gray-500 font-medium">B.Tech in Computer Science </p>
+
+                        </li>
+                        <li
+                            class="border-[0.5px] cursor-pointer border-gray-700 rounded-2xl  p-4 text-left hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                            <img src="portfolio_images/project-icon.png" class="w-5 dark:hidden">
+                            <img src="portfolio_images/project-icon-dark.png" class="w-5 hidden dark:block">
+                            <h1 class="text-xl font-bold">Projects: </h1>
+                            <p class="text-lg text-gray-500 font-medium">Build more than 5 projects</p>
+                        </li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <p class="text-2xl font-bold">Technologies I use:</p>
+                        <ul class="flex items-center justify-center flex-wrap gap-5 sm:gap-7">
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex flex-col p-1 items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/vscode.png" class="w-7 sm:w-10">
+                                <p class=" font-semibold text-lg">VS Code</p>
+                            </li>
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex-col p-1 flex items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/git.png" class="w-7 sm:w-12">
+                                <p class=" font-semibold text-lg">Git</p>
+                            </li>
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex flex-col p-1 items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/github.png" class="w-7 sm:w-12 dark:hidden">
+                                <img src="portfolio_images/githubwhite.png" class="w-7 sm:w-8 pb-3 hidden dark:block">
+                                <p class=" font-semibold text-lg">GitHub</p>
+                            </li>
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex flex-col p-1 items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/ChatGPT-Logo.png" class="w-16 sm:w-24 dark:hidden">
+                                <img src="portfolio_images/chatgptwhite.png" class="w-16 sm:w-12 hidden dark:block">
+                                <p class=" font-semibold text-lg">ChatGPT</p>
+                            </li>
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex flex-col p-1 items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/tailwind.png" class="w-7 sm:w-16 pb-2">
+                                <p class=" font-semibold text-lg">Tailwind</p>
+                            </li>
+                            <li
+                                class="aspect-square  cursor-pointer border-gray-700 rounded-2xl w-16 sm:w-20 flex flex-col p-1 items-center justify-center hover:bg-gray-100 hover:-translate-y-1 hover:duration-500 hover:shadow-black dark:hover:shadow-lighthover dark:hover:bg-darkhover">
+                                <img src="portfolio_images/pngegg.png" class="w-7 sm:w-12">
+                                <p class=" font-semibold text-lg">Bootstrap</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="border-t border-gray-400"></div>
+
+    <!--Services section-->
+    <section id="service">
+        <div class="px-[10%] py-20 w-full scroll-mt-20">
+            <p class="text-xl">What I offer</p>
+            <p class="text-4xl">My Services</p>
+            <p class="flex-1 text-lg from-neutral-500 text-left mt-2">I’m a versatile B.Tech graduate specializing in
+                web development and software engineering. I create
+                responsive websites using HTML, CSS, JavaScript, and Bootstrap, and customize WordPress CMS for
+                personalized web solutions. I also design functional web applications, prepare technical documents with
+                LaTeX, and create detailed reports with MS Office tools.<br>
+                I manage code repositories and collaborate effectively using Git, GitHub, and GitLab. Fluent in Hindi,
+                Nepali, Bhojpuri, and English, I ensure smooth communication in diverse settings. Additionally, I offer
+                technical training in web development and Git/GitHub, as well as project consultation. Explore my
+                portfolio to see my work and learn more about the services I offer.
+            </p>
+            <div class="grid grid-cols-auto gap-5 my-3">
+                <div
+                    class="border-[0.5px] border-gray-500 rounded-3xl hover:-translate-y-1 cursor-pointer hover:shadow-black dark:hover:shadow-white hover:bg-gray-300 hover:duration-500 mt-5 w-60 p-4 text-left dark:hover:bg-darkhover">
+                    <img src="portfolio_images/web-icon.png" class="w-16">
+                    <h2 class="text-2xl font-semibold mt-2">Web Design</h2>
+                    <p class="text-md mt-2">Responsive web design using HTML, CSS, JavaScript, and Bootstrap...</p>
+                    <a class="flex items-center gap-4 text-lg font-semibold">Read more <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div
+                    class="border-[0.5px] border-gray-500 rounded-3xl hover:-translate-y-1 cursor-pointer hover:shadow-black dark:hover:shadow-white hover:bg-gray-300 hover:duration-500 mt-5 w-60 p-4 text-left dark:hover:bg-darkhover">
+                    <img src="portfolio_images/ui-icon.png" class="w-16">
+                    <h2 class="text-2xl font-semibold mt-2">UI/UX</h2>
+                    <p class="text-md mt-2">Designing seamless interactions for a better user experience...</p>
+                    <a class="flex gap-4 text-lg items-center font-semibold">Read more <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div
+                    class="border-[0.5px] border-gray-500 rounded-3xl hover:-translate-y-1 cursor-pointer hover:shadow-black dark:hover:shadow-white hover:bg-gray-300 hover:duration-500 mt-5 w-60 p-4 text-left dark:hover:bg-darkhover">
+                    <img src="portfolio_images/graphics-icon.png" class="w-16">
+                    <h2 class="text-2xl font-semibold mt-2">Graphics Design</h2>
+                    <p class="text-md mt-2">Creating visual stories that leave a lasting impression...</p>
+                    <a class="flex gap-4 text-lg items-center font-semibold mt-5">Read more <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-400"></div>
+    </section>
+
+    <!--Work  section-->
+    <section id="work">
+        <div class="px-[10%] py-20 w-full scroll-mt-20">
+            <p class="text-xl">My Portfolio</p>
+            <p class="text-4xl">My Latest Works</p>
+            <p class="flex-1 text-lg from-neutral-500 mt-2 text-left">Explore my diverse projects that showcase my
+                expertise in web development and software engineering. Highlights include a weather forecast app and a
+                to-do list application, developed using HTML, CSS, and JavaScript. These projects reflect my technical
+                skills, creativity, and dedication to building functional, user-friendly applications. Dive into my
+                portfolio to see how I bring innovative solutions to life.
+            </p>
+
+            <div class="grid sm:grid-cols-auto gap-5 my-7">
+                <div
+                    class="aspect-square bg-[url('/portfolio_images/work-1.png')] bg-no-repeat bg-cover bg-center relative rounded-lg cursor-pointer group">
+                    <div
+                        class=" bottom-5 w-10/12 -translate-x-1/2 left-1/2 absolute px-5 py-3 rounded-lg dark:bg-[#11001f] bg-white flex items-center text-left justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold">Frontend Projects</h2>
+                            <p class="text-sm">Web Design</p>
+                        </div>
+                        <div
+                            class="border-[0.5px] border-gray-500 group-hover:bg-lime-400 transition rounded-full w-9 aspect-square shadow-[2px_2px_0_#000] flex justify-center items-center dark:shadow-lighthover">
+                            <i class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="aspect-square bg-[url('/portfolio_images/work-2.png')] bg-no-repeat bg-cover bg-center relative rounded-lg cursor-pointer group">
+                    <div
+                        class=" bottom-5 w-10/12 -translate-x-1/2 left-1/2 absolute px-5 py-3 rounded-lg bg-white dark:bg-[#11001f] flex items-center text-left justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold">Geo Based App</h2>
+                            <p class="text-sm">Mobile App</p>
+                        </div>
+                        <div
+                            class="border-[0.5px] border-gray-500 group-hover:bg-lime-400 transition rounded-full w-9 aspect-square shadow-[2px_2px_0_#000] flex justify-center items-center dark:shadow-lighthover">
+                            <i class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="aspect-square bg-[url('/portfolio_images/work-3.png')] bg-no-repeat bg-cover bg-center relative rounded-lg cursor-pointer group">
+                    <div
+                        class=" bottom-5 w-10/12 -translate-x-1/2 left-1/2 absolute px-5 py-3 rounded-lg bg-white dark:bg-[#11001f] flex items-center text-left justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold">Photography Site</h2>
+                            <p class="text-sm">Web Design</p>
+                        </div>
+                        <div
+                            class="border-[0.5px] border-gray-500 group-hover:bg-lime-400 transition rounded-full w-9 aspect-square shadow-[2px_2px_0_#000] flex justify-center items-center dark:shadow-lighthover">
+                            <i class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="aspect-square bg-[url('/portfolio_images/work-4.png')] bg-no-repeat bg-cover bg-center relative rounded-lg cursor-pointer group">
+                    <div
+                        class=" bottom-5 w-10/12 -translate-x-1/2 left-1/2 absolute px-5 py-3 rounded-lg bg-white dark:bg-[#11001f] flex items-center text-left justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold">UI/UX Designing</h2>
+                            <p class="text-sm">UI/UX Design</p>
+                        </div>
+                        <div
+                            class="border-[0.5px] border-gray-500 group-hover:bg-lime-400 transition rounded-full w-9 aspect-square shadow-[2px_2px_0_#000] dark:shadow-lighthover flex justify-center items-center">
+                            <i class="fa-solid fa-location-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a href="#"
+                class="border-[0.5px] border-gray-400 hover:text-white flex items-center justify-center gap-3 w-max rounded-full mx-auto my-auto text-lg p-3 hover:bg-gray-300 font-semibold dark:hover:bg-darkhover hover:-translate-y-1 duration-500">See
+                more<i class="fa-solid fa-arrow-right"></i> </a>
+        </div>
+        <div class="border-t border-gray-400"></div>
+    </section>
+
+    <!--Contact section -->
+    <section id="contact">
+        <div
+            class="w-full px-[12%] py-14 scroll-mt-20 bg-[url('/portfolio_images/footer-bg-color.png')] bg-[length:90%_auto] bg-center bg-no-repeat dark:bg-none">
+            <p class="text-xl">Contact with me</p>
+            <p class="text-4xl">Get in touch</p>
+            <p class="flex-1 text-lg from-neutral-500 mt-2 text-left">Let's Connect and Build Something Amazing
+                Together! Whether you have a new project in mind, need technical advice, or just want to discuss
+                innovative ideas, I'm here to help. Reach out to me and let's turn your vision into reality. Together,
+                we can create outstanding web applications, solve complex problems, and push the boundaries of what's
+                possible. I'm excited to collaborate with you and bring our combined expertise to the forefront. Don't
+                hesitate to get in touch—let's start this creative journey today!
+            </p>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto">
+                <input type="hidden" name="access_key" value="5096bf94-f9a5-4383-9592-194afb7cd8b1">
+
+                <div class="grid grid-cols-auto gap-4 mt-10 mb-5">
+                    <input type="text" placeholder="Enter your name"
+                        class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white dark:bg-darkhover/20 dark:border-white/80"
+                        required name="name">
+                    <input type="email" placeholder="Enter your email"
+                        class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white dark:bg-darkhover/20 dark:border-white/80"
+                        required name="email">
+                </div>
+                <textarea rows="6" placeholder="Enter your message"
+                    class="w-full p-4 outline-none border-gray-400 border-[0.5px] rounded-md bg-white mb-2 dark:bg-darkhover/20 dark:border-white/90"
+                    required name="message"></textarea>
+                <button
+                    class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:hover:bg-darkhover dark:border-[0.5px]">Submit
+                    now<i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+
+        </div>
+        <div class="border-t border-gray-400"></div>
+    </section>
+
+    <!--Footer  section-->
+    <footer>
+        <div class="mt-10">
+            <div class="w-full mb-5">
+                <img src="portfolio_images/bijay-kumar-shah-high-resolution-logo-black-transparent.png"
+                    class="w-72 mx-auto mb-5 dark:hidden">
+                <img src="portfolio_images/bijay-kumar-shah-high-resolution-logo-white-transparent.png"
+                    class="w-72 mx-auto mb-5 hidden dark:block">
+                <div class=" px-[10%] sm:flex sm:items-center justify-center sm:justify-between  gap-10 sm:flex-wrap ">
+                    <h1 class="flex gap-3 mb-5"> <img src="portfolio_images/mail_icon.png" class="w-6 dark:hidden">
+                        <img src="portfolio_images/mail_icon_dark.png" class="w-6 hidden dark:block">
+                        bijaykrsah.007@gmail.com
+                    </h1>
+                    <ul class="flex justify-center gap-5 dark:hidden">
+                        <li><a href="https://www.instagram.com/bj_shah_07/"><img src="portfolio_images/insta.png"
+                                    class="w-10 hover:-translate-y-1 hover:duration-200"></a></li>
+                        <li><a href="https://github.com/Bjshah07"><img src="portfolio_images/github.png"
+                                    class="w-10 hover:-translate-y-1 hover:duration-200"></a></li>
+                        <li><a href="https://www.linkedin.com/in/bijaykrshah007/"><img
+                                    src="portfolio_images/linkedin.png"
+                                    class="w-10 hover:-translate-y-1 hover:duration-200"></a></li>
+                    </ul>
+                    <div class="hidden dark:block">
+                        <ul class="flex justify-center gap-5">
+                            <li><a href="https://www.instagram.com/bj_shah_07/"><img src="portfolio_images/insta.png"
+                                        class="w-10 hover:-translate-y-1 hover:duration-200"></a></li>
+                            <li><a href="https://github.com/Bjshah07"><img src="portfolio_images/githubwhite.png"
+                                        class="w-8 hover:-translate-y-1 hover:duration-200"></a></li>
+                            <li><a href="https://www.linkedin.com/in/bijaykrshah007/"><img
+                                        src="portfolio_images/likedinwhite.png"
+                                        class="w-8 hover:-translate-y-1 hover:duration-200"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-400">
+                <p>© 2024 Bijay Kumar Shah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

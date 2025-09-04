@@ -1,0 +1,103 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+}
+
+.form-container {
+    background: rgba(26, 26, 46, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #355e3b;
+    font-size: 2rem;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #a3c293;
+    border-radius: 5px;
+    background: #f0f9f4;
+    color: #355e3b;
+    font-size: 1rem;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #7a9a7e;
+}
+
+.form select {
+    cursor: pointer;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #6abf69;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #4a8a3e;
+}
+
+.form p {
+    text-align: center;
+    margin-top: 1rem;
+    color: #5a7a5a;
+}
+
+.form a {
+    color: #6abf69;
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form h2 {
+        font-size: 1.5rem;
+    }
+}
